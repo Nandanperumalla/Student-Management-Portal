@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" data-theme="midnight" data-mode="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>ERP — The Future of Academic Management</title>
+  <meta name="description" content="A world-class Student Management ERP." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/themes.css" />
+  <link rel="stylesheet" href="./css/app.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>" />
+</head>
+<body>
+  <!-- Aurora / gradient lighting background -->
+  <div class="aurora" aria-hidden="true">
+    <span class="aurora__blob aurora__blob--1"></span>
+    <span class="aurora__blob aurora__blob--2"></span>
+    <span class="aurora__blob aurora__blob--3"></span>
+    <div class="aurora__grid"></div>
+  </div>
+
+  <!-- Boot / splash -->
+  <div id="boot" class="boot">
+    <div class="boot__logo">
+      <div class="boot__mark">🎓</div>
+      <div class="boot__name">ERP</div>
+    </div>
+    <div class="boot__bar"><span></span></div>
+    <div class="boot__tag">The Future of Academic Management</div>
+  </div>
+
+  <div id="app" class="app" hidden>
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar__brand">
+        <div class="brand__mark">🎓</div>
+        <div class="brand__text">
+          <div class="brand__name">ERP</div>
+          <div class="brand__sub">Academic OS</div>
+        </div>
+        <button id="sidebarToggle" class="sidebar__collapse" title="Collapse sidebar" aria-label="Collapse sidebar"></button>
+      </div>
+      <nav id="nav" class="nav"></nav>
+      <div class="sidebar__foot">
+        <div id="miniProfile" class="mini-profile"></div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <div class="main">
+      <header class="topbar">
+        <button id="mobileMenu" class="icon-btn topbar__menu" aria-label="Open menu"></button>
+        <button id="searchTrigger" class="searchbar" aria-label="Open command palette">
+          <span class="searchbar__icon"></span>
+          <span class="searchbar__text">Search students, pages, actions…</span>
+          <span class="searchbar__kbd"><kbd>⌘</kbd><kbd>K</kbd></span>
+        </button>
+        <div class="topbar__actions">
+          <button id="themeMenuBtn" class="icon-btn" title="Themes" aria-label="Themes"></button>
+          <button id="modeToggle" class="icon-btn" title="Toggle light / dark" aria-label="Toggle light / dark"></button>
+          <button id="notifBtn" class="icon-btn has-dot" title="Notifications" aria-label="Notifications"></button>
+          <button id="profileBtn" class="profile-chip" aria-label="Profile"></button>
+        </div>
+      </header>
+
+      <main id="view" class="view"></main>
+    </div>
+  </div>
+
+  <!-- Command palette -->
+  <div id="palette" class="palette" hidden>
+    <div class="palette__backdrop" data-close></div>
+    <div class="palette__panel" role="dialog" aria-label="Command palette">
+      <div class="palette__input">
+        <span class="palette__icon"></span>
+        <input id="paletteInput" type="text" placeholder="Type a command or search… try “CSE CGPA above 9”" autocomplete="off" spellcheck="false" />
+        <span class="palette__hint"><kbd>esc</kbd></span>
+      </div>
+      <div id="paletteResults" class="palette__results"></div>
+      <div class="palette__foot">
+        <span><kbd>↑↓</kbd> navigate</span>
+        <span><kbd>↵</kbd> select</span>
+        <span>AI-assisted natural language search</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Theme menu -->
+  <div id="themeMenu" class="popover" hidden></div>
+
+  <!-- Notifications -->
+  <div id="notifPanel" class="popover popover--wide" hidden></div>
+
+  <!-- Slide-over (student profile, etc.) -->
+  <div id="drawer" class="drawer" hidden>
+    <div class="drawer__backdrop" data-close></div>
+    <div id="drawerPanel" class="drawer__panel"></div>
+  </div>
+
+  <!-- Toasts -->
+  <div id="toasts" class="toasts"></div>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
